@@ -3,7 +3,7 @@ cask "greyproxy" do
   name "greyproxy"
   desc "SOCKS5 proxy with DNS resolution and web dashboard for network sandboxing"
   homepage "https://github.com/GreyhavenHQ/greyproxy"
-  version "0.2.9"
+  version "0.2.10"
 
   livecheck do
     skip "Auto-generated on release."
@@ -17,32 +17,42 @@ cask "greyproxy" do
   on_macos do
     on_intel do
       url "https://github.com/GreyhavenHQ/greyproxy/releases/download/v#{version}/greyproxy_#{version}_darwin_amd64.tar.gz"
-      sha256 "a13cc421c8d29446025f1e5c324b1c8682bc1c48ffaa1e7bf54828f5f2e195d2"
+      sha256 "e5f91a82089aa7f6779226b174c4597fb4712ea9dbf109b82efc7208428f6185"
     end
     on_arm do
       url "https://github.com/GreyhavenHQ/greyproxy/releases/download/v#{version}/greyproxy_#{version}_darwin_arm64.tar.gz"
-      sha256 "db582ac90a2df4d5230ec6fa1f8c04af0e2697240090308049e710db0e8ceb4a"
+      sha256 "a07282993ef56622ec0bf4ee891b149982ee5401fffc07bb578853675126ed3c"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/GreyhavenHQ/greyproxy/releases/download/v#{version}/greyproxy_#{version}_linux_amd64.tar.gz"
-      sha256 "3e48b1b95782bdb2ae6538b87a7891e09fc1fba987799b40a0346153998b03d6"
+      sha256 "4e879803c2caa072e26c69eff4ba78811e59cfd4109be044356346bfd08c32f0"
     end
     on_arm do
       url "https://github.com/GreyhavenHQ/greyproxy/releases/download/v#{version}/greyproxy_#{version}_linux_arm64.tar.gz"
-      sha256 "f69623755323c441b26be28e2c6de2c51bca23271913f2d091c8413a3512d284"
+      sha256 "011490f346455ea2cab393e142a738479e5046b22e541a8720481cf7494cb766"
     end
   end
 
   postflight do
     if OS.mac?
       system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/greyproxy"]
+      system_command "#{staged_path}/greyproxy", args: ["install", "-f"]
+    end
+  end
+
+  uninstall_postflight do
+    if OS.mac?
+      system_command "#{staged_path}/greyproxy", args: ["uninstall", "-f"]
     end
   end
 
   caveats do
+    "greyproxy has been installed and started as a launchd user agent."
+    "Dashboard: http://localhost:43080"
+    ""
     "For desktop notifications on macOS, install terminal-notifier:"
     "  brew install terminal-notifier"
   end
