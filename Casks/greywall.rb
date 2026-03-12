@@ -3,7 +3,7 @@ cask "greywall" do
   name "greywall"
   desc "Sandboxed command execution with network isolation"
   homepage "https://github.com/GreyhavenHQ/greywall"
-  version "0.2.2"
+  version "0.2.3"
 
   livecheck do
     skip "Auto-generated on release."
@@ -17,22 +17,22 @@ cask "greywall" do
   on_macos do
     on_intel do
       url "https://github.com/GreyhavenHQ/greywall/releases/download/v#{version}/greywall_#{version}_Darwin_x86_64.tar.gz"
-      sha256 "28b25b40f64feabc79b3038e98d06d8ca299ad6fc90f67d5f2278c1cebd8612c"
+      sha256 "18613ac6c56fd64b0df9e07ec64bc8518429287d8b8ba8bca58af10991107fd1"
     end
     on_arm do
       url "https://github.com/GreyhavenHQ/greywall/releases/download/v#{version}/greywall_#{version}_Darwin_arm64.tar.gz"
-      sha256 "97aa0cce40f1f41d2d53779d13d58c74a9390e99c832f79a9b33358aea540dcc"
+      sha256 "935c292c33fac51a9c5e88019b3fdad424fd4c40d3a651d323bddc5a3fa009e3"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/GreyhavenHQ/greywall/releases/download/v#{version}/greywall_#{version}_Linux_x86_64.tar.gz"
-      sha256 "09d04d016902ab6ec320c5f3d9a607768765bd040f7ec4601136020cb211de98"
+      sha256 "8dc5252abfa57b44b7887f93162472950b9576db6248b6ba94084f9e963c5f65"
     end
     on_arm do
       url "https://github.com/GreyhavenHQ/greywall/releases/download/v#{version}/greywall_#{version}_Linux_arm64.tar.gz"
-      sha256 "1e8de12e1c21e8fc90b385e9ca6a7bd72ad1cfa7674658ead35d892cdf1ea653"
+      sha256 "145b3b7a815005d2988a5b4b7af9465fac31b13feafb08b624b612911d1f86a6"
     end
   end
 
@@ -43,7 +43,8 @@ cask "greywall" do
   end
 
   caveats do
-    "Run 'greywall setup' to start the greyproxy service."
+    "greyproxy is installed as a dependency and runs automatically."
+    "Dashboard: http://localhost:43080"
   end
 
   # No zap stanza required
