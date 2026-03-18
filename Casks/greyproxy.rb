@@ -3,7 +3,7 @@ cask "greyproxy" do
   name "greyproxy"
   desc "SOCKS5 proxy with DNS resolution and web dashboard for network sandboxing"
   homepage "https://github.com/GreyhavenHQ/greyproxy"
-  version "0.2.10"
+  version "0.3.0"
 
   livecheck do
     skip "Auto-generated on release."
@@ -17,22 +17,22 @@ cask "greyproxy" do
   on_macos do
     on_intel do
       url "https://github.com/GreyhavenHQ/greyproxy/releases/download/v#{version}/greyproxy_#{version}_darwin_amd64.tar.gz"
-      sha256 "e5f91a82089aa7f6779226b174c4597fb4712ea9dbf109b82efc7208428f6185"
+      sha256 "7772091fb5c69579fd21fc16ebd3f8e618a7b6f7716244e1ba4e68ee375a3462"
     end
     on_arm do
       url "https://github.com/GreyhavenHQ/greyproxy/releases/download/v#{version}/greyproxy_#{version}_darwin_arm64.tar.gz"
-      sha256 "a07282993ef56622ec0bf4ee891b149982ee5401fffc07bb578853675126ed3c"
+      sha256 "22021d8715bfc20e424b4a65311bd7c0d1a9d69c577458a564e5a0194a9eab2b"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/GreyhavenHQ/greyproxy/releases/download/v#{version}/greyproxy_#{version}_linux_amd64.tar.gz"
-      sha256 "4e879803c2caa072e26c69eff4ba78811e59cfd4109be044356346bfd08c32f0"
+      sha256 "c0ef239a7104159d6c9184fe1144d2f17f7f452a1ec95d8129cc3fffbea9a814"
     end
     on_arm do
       url "https://github.com/GreyhavenHQ/greyproxy/releases/download/v#{version}/greyproxy_#{version}_linux_arm64.tar.gz"
-      sha256 "011490f346455ea2cab393e142a738479e5046b22e541a8720481cf7494cb766"
+      sha256 "4d1fcc683dc15970dd8d2e1eac09ef3d3b1b19c5db8e138013c55e0c5dafbd2f"
     end
   end
 
