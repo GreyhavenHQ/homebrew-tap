@@ -3,7 +3,7 @@ cask "greywall" do
   name "greywall"
   desc "Sandboxed command execution with network isolation"
   homepage "https://github.com/GreyhavenHQ/greywall"
-  version "0.2.6"
+  version "0.2.7"
 
   livecheck do
     skip "Auto-generated on release."
@@ -17,22 +17,22 @@ cask "greywall" do
   on_macos do
     on_intel do
       url "https://github.com/GreyhavenHQ/greywall/releases/download/v#{version}/greywall_#{version}_Darwin_x86_64.tar.gz"
-      sha256 "219482ad796cae6568ee335deb6f92c00f026286000701fe0a28a3bbdde78012"
+      sha256 "7d59db110fbd06a7bdae0842655b0e5922ccba409eba6bc13a2c46527567e0e2"
     end
     on_arm do
       url "https://github.com/GreyhavenHQ/greywall/releases/download/v#{version}/greywall_#{version}_Darwin_arm64.tar.gz"
-      sha256 "94114ec3272329cc2b1ac0247def4945614e63ffe1bd1a4a8451e32353c16805"
+      sha256 "34c3d98713ed0246d5d0309a4d402fa56e17e33d74ea362d439201811906a659"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/GreyhavenHQ/greywall/releases/download/v#{version}/greywall_#{version}_Linux_x86_64.tar.gz"
-      sha256 "b877fa50394044bdebf1883d9ac68bf3a23a361528c3dd3da230e1ffcecedf1f"
+      sha256 "83c5f7076bcf1f97f062ec82957ee28644b5bcfd594e713d199ed1066614bdff"
     end
     on_arm do
       url "https://github.com/GreyhavenHQ/greywall/releases/download/v#{version}/greywall_#{version}_Linux_arm64.tar.gz"
-      sha256 "2fb0c3aa6a843b7300a5e23f0775a617ad125388661ba2f3f8b596eab33232ac"
+      sha256 "4ffc2e3ea8a971fb18b76c9338002fff7fd9cd2ee459bd0a243ad5f12e958202"
     end
   end
 
