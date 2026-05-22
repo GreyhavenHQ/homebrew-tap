@@ -2,26 +2,26 @@
 cask "greywall" do
   binary "greywall", target: "greywatch"
 
-  version "0.3.5"
+  version "0.3.6"
 
   on_macos do
     on_intel do
-      sha256 "413a2abf2cf9031cada0445b3eff79393658a84d5560d276c392c380281baae3"
+      sha256 "60de7a9d79e47529923dbca61c93c9006c0d088ea38c088ef95f2f88db373160"
       url "https://github.com/GreyhavenHQ/greywall/releases/download/v#{version}/greywall_#{version}_Darwin_x86_64.tar.gz"
     end
     on_arm do
-      sha256 "8eea49517fd32d49d7b32777347950525ac612d2dd9dccd1e3791d2d162c060a"
+      sha256 "97dad476d96743d59ba84c4bbcd3590f5f23cf499d837ab6220e49a239953e4b"
       url "https://github.com/GreyhavenHQ/greywall/releases/download/v#{version}/greywall_#{version}_Darwin_arm64.tar.gz"
     end
   end
 
   on_linux do
     on_intel do
-      sha256 "b8fd967f90d847ca5f22501958e985ee1626beb33e31e68677c7634aa686474b"
+      sha256 "c332b504c3e1517add2ae3445ff6b9d08682d2154d85e6aabfa43318670b529f"
       url "https://github.com/GreyhavenHQ/greywall/releases/download/v#{version}/greywall_#{version}_Linux_x86_64.tar.gz"
     end
     on_arm do
-      sha256 "d30f6c406dad57368b0736b703c9834959de0d167ca7fb604b306598ec52d3e9"
+      sha256 "57accdeed12dd04582eb21fa95e190dfeb78fe7844ac5514a61c3b0f496ce985"
       url "https://github.com/GreyhavenHQ/greywall/releases/download/v#{version}/greywall_#{version}_Linux_arm64.tar.gz"
     end
   end
